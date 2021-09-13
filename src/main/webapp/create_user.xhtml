@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:rich="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{userBean.createUser()}"></f:event>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form id="createForm">
+                <p:panel id="CreatePnl" header="Create"
+                         style="width: 350px; margin: 0 auto;">
+
+                    <h:panelGrid id="createPanel" columns="2" cellpadding="5">
+                        <h:outputText value="Username" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="uname" value="#{userBean._usr.uname}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="uname" id="_uname"/>
+                        <p:spacer></p:spacer>
+
+
+                        <h:outputText value="Password" />
+                        <p:spacer></p:spacer>
+                        <p:password id="password" value="#{userBean._usr.password}" feedback="false"></p:password>
+                        <p:spacer></p:spacer>
+                        <p:message for="password"/>
+                        <p:spacer></p:spacer>
+
+
+                        <h:outputText value="Name" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="firstname" value="#{userBean._usr.firstName}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="firstname"/>
+                        <p:spacer></p:spacer>
+
+
+                        <h:outputText value="Lastname" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="lastname" value="#{userBean._usr.lastName}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="lastname"/>
+                        <p:spacer></p:spacer>
+
+
+                        <h:outputText value="Address" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="adress" value="#{userBean._usr.adress}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="adress"/>
+                        <p:spacer></p:spacer>
+
+
+                        <h:outputText value="Phone" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="phoneno" value="#{userBean._usr.phoneNo}">
+                        </p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="phoneno"/>
+                        <p:spacer></p:spacer>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="1" cellpadding="10" width="100%">
+                        <p:commandButton id="createButton" action="#{userBean.save()}"
+                                         value="Create" update="@form" style="float: right;">
+                        </p:commandButton>
+                    </h:panelGrid>
+
+                </p:panel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

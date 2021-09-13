@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{shoppingBean.createProduct()}"></f:event>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form enctype="multipart/form-data">
+                <p:panel id="CreatePnl" header="Create"
+                         style="width: 350px; margin: 0 auto;">
+                    <h:panelGrid id="createPanel" columns="1" cellpadding="2">
+
+                        <h:outputText value="Product Name" />
+                        <p:inputText id="name" value="#{shoppingBean._product.product_name}"></p:inputText>
+                        <p:message for="name"/>
+
+                        <p:outputLabel for="@next" value="Category"/>
+                        <h:selectOneMenu value="#{shoppingBean._category.id}">
+                            <f:selectItems value="#{shoppingBean.categories}"
+                                           var="category" itemValue="#{category.id}"
+                                           itemLabel="#{category.category_name}"/>
+                        </h:selectOneMenu>
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Price" />
+                        <p:inputText id="price" value="#{shoppingBean._product.price}"></p:inputText>
+                        <p:message for="price"/>
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Quantity" />
+                        <p:inputText id="quantity" value="#{shoppingBean._product.product_quantity}"></p:inputText>
+                        <p:message for="quantity"/>
+                    </h:panelGrid>
+                    <h:panelGrid>
+                        <h:outputText value="Product Image"/>
+                        <p:fileUpload mode="simple" value="#{shoppingBean.uploadedFile}" skinSimple="true" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="1" cellpadding="10" width="100%">
+                        <p:commandButton id="createButton" action="#{shoppingBean.save_product()}"
+                                         value="Create" update="@form" style="float: right;">
+                        </p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

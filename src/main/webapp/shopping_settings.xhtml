@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{shoppingBean.onload()}"></f:event>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form id="tableform" style="margin-top: 50px"><div class="card">
+                <p:growl id="msg" showDetail="true" life="2000" />
+                <p:dataTable var="category" value="#{shoppingBean.categories}" border="1">
+                        <p:column headerText="Id">
+                            #{category.id}
+                        </p:column>
+                        <p:column headerText="Name">
+                            #{category.category_name}
+                        </p:column>
+                        <p:column headerText="% Discount">
+                            #{category.discount_percent}
+                        </p:column>
+                        <p:column headerText="Delete">
+                            <p:commandButton action="#{shoppingBean.deleteCategory(category)}" update="@form" value="Delete" onclick="return confirm('Are you sure?')" styleClass="ui-button-raised ui-button-danger" />
+                        </p:column>
+                        <p:column headerText="Edit">
+                            <p:commandButton  action="#{shoppingBean.editCategory(category)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
+                        </p:column>
+                        <p:column headerText="Reset Image">
+                            <p:commandButton action="#{shoppingBean.resetCategoryImage(category)}" update="@form" value="Set Default Image" styleClass="ui-button-raised ui-button-secondary" />
+                        </p:column>
+                        <p:column headerText="Make a Discount">
+                            <p:inputText id="discount" value="#{category.discount_percent}"></p:inputText>
+                            <br></br>
+                            <p:message for="discount"/>
+                            <br></br>
+                            <p:commandButton action="#{shoppingBean.categoryDiscount(category)}" update="@form" value="Make a Discount" styleClass="ui-button-raised ui-button-help" />
+                        </p:column>
+                        <f:facet name="footer">
+                            <div style="text-align: center;">
+                                <p:commandButton id="createCategory" action="#{shoppingBean.createCategory()}" value="Create New Category" styleClass="ui-button-raised ui-button-success" />
+                            </div>
+                        </f:facet>
+                    </p:dataTable>
+                </div>
+
+                <div class="card" style="margin-top: 100px">
+                        <p:dataTable var="product" value="#{shoppingBean.products}" border="1">
+
+                            <p:column headerText="Id">
+                                <h:outputText value="#{product.product_id}" />
+                            </p:column>
+
+                            <p:column headerText="Name">
+                                <h:outputText value="#{product.product_name}" />
+                            </p:column>
+
+                            <p:column headerText="Price">
+                                <h:outputText value="#{product.price}" />
+                            </p:column>
+
+                            <p:column headerText="% Product Discount">
+                                <h:outputText value="#{product.discount_percent}" />
+                            </p:column>
+
+                            <p:column headerText="% Category Discount">
+                                <h:outputText value="#{product.category.discount_percent}" />
+                            </p:column>
+
+                            <p:column headerText="Discount Price">
+                                <h:outputText value="#{product.discount_price}" />
+                            </p:column>
+
+                            <p:column headerText="Quantity">
+                                <h:outputText value="#{product.product_quantity}" />
+                            </p:column>
+
+                            <p:column headerText="Category">
+                                <h:outputText value="#{product.category.category_name}" />
+                            </p:column>
+                            <p:column headerText="Delete">
+                                <p:commandButton action="#{shoppingBean.deleteProduct(product)}" update="@form" value="Delete" onclick="return confirm('Are you sure?')" styleClass="ui-button-raised ui-button-danger" />
+                            </p:column>
+                            <p:column headerText="Edit">
+                                <p:commandButton action="#{shoppingBean.editProduct(product)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
+                            </p:column>
+                            <p:column headerText="Reset Image">
+                                <p:commandButton action="#{shoppingBean.resetProductImage(product)}" update="@form" value="Set Default Image" styleClass="ui-button-raised ui-button-secondary" />
+                            </p:column>
+                            <p:column headerText="Make a Discount">
+                                <p:inputText id="p_discount" value="#{product.discount_percent}"></p:inputText>
+                                <p:message for="p_discount"/>
+                                <p:commandButton action="#{shoppingBean.productDiscount(product)}" update="@form" value="Make a Discount" styleClass="ui-button-raised ui-button-help" />
+                            </p:column>
+
+                            <f:facet name="footer">
+                                <div style="text-align: center;">
+                                    <p:commandButton id="createProduct" action="#{shoppingBean.createProduct()}" value="Create New Product" style="margin-bottom: 100px" styleClass="ui-button-raised ui-button-success" />
+                                </div>
+                            </f:facet>
+
+                        </p:dataTable>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <f:metadata>
+    <f:event type="preRenderView" listener="#{shoppingBean.basketProducts()}"></f:event>
+  </f:metadata>
+</h:head>
+
+<h:body>
+  <ui:composition template="common.xhtml">
+    <ui:define name="content">
+      <h:form id="tableform">
+        <p:growl id="msg" showDetail="true" life="2000" />
+        <div class="card">
+          <p:dataTable var="product" value="#{shoppingBean.products}" border="1" style="margin-top: 50px">
+            <p:column headerText="Image">
+              #{product.image}
+            </p:column>
+            <p:column headerText="Name">
+              #{product.product_name}
+            </p:column>
+            <p:column headerText="Price">
+              #{product.discount_price}
+            </p:column>
+            <p:column headerText="Quantity">
+              #{product.basket_quantity}
+            </p:column>
+            <p:column headerText="Discard">
+              <p:commandButton action="#{shoppingBean.deleteFromBasket(product)}" value="Discard" styleClass="ui-button-raised ui-button-danger" />
+            </p:column>
+            <f:facet name="footer">
+              <div style="text-align: center;">
+                <h3>Total Price = #{shoppingBean._basket.total_price}</h3>
+                <p:commandButton style="align-self: center" id="buy" action="#{shoppingBean.buy()}" icon="pi pi-dollar" styleClass="ui-button-raised ui-button-success" value="Buy" update="tableform">
+                </p:commandButton>
+              </div>
+            </f:facet>
+          </p:dataTable>
+        </div>
+      </h:form>
+    </ui:define>
+  </ui:composition>
+</h:body>
+</html>

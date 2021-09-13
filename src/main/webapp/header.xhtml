@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+    <ui:composition>
+            <h:form>
+                <p:growl id="messages"/>
+                <p:menubar>
+                    <p:menuitem value="GonderGelsin" icon="pi pi-slack" action="/index.xhtml?faces-redirect=true"/>
+                    <f:facet name="options">
+                        <p:menuButton style="margin-right: 1px" value="Admin" rendered="#{loginBean.loggedIn == 'true' and loginBean._usr.isAdmin() == 'true'}" icon="pi pi-cog">
+                            <p:menuitem value="User Settings" action="/user_settings.xhtml?faces-redirect=true" ajax="false" icon="pi pi-id-card"/>
+                            <p:menuitem value="Shopping Settings" action="/shopping_settings.xhtml?faces-redirect=true" icon="pi pi-credit-card"/>
+                        </p:menuButton>
+                        <p:commandButton value="User" action="/account.xhtml?faces-redirect=true}" icon="pi pi-fw pi-user" style="margin-right: 1px" rendered="#{loginBean.loggedIn == 'true'}"></p:commandButton>
+                        <p:commandButton value="Register" action="/create_user.xhtml?faces-redirect=true}" icon="pi pi-fw pi-user-plus" style="margin-right: 1px" rendered="#{loginBean.loggedIn == 'false'}"></p:commandButton>
+                        <p:commandButton value="Login" action="/login.xhtml?faces-redirect=true}" icon="pi pi-fw pi-sign-in" style="margin-right: 1px" rendered="#{loginBean.loggedIn == 'false'}"></p:commandButton>
+                        <p:commandButton value="Basket" action="/basket.xhtml?faces-redirect=true" style="margin-right: 1px" icon="pi pi-fw pi-shopping-cart"></p:commandButton>
+                        <p:commandButton value="Orders" action="/orders.xhtml?faces-redirect=true" style="margin-right: 1px" icon="pi pi-fw pi-map"></p:commandButton>
+                        <p:commandButton value="Logout" action="#{loginBean.doLogout()}" icon="pi pi-fw pi-sign-out" style="margin-right: 1px" rendered="#{loginBean.loggedIn == 'true'}"></p:commandButton>
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+    </ui:composition>
+</h:body>
+</html>

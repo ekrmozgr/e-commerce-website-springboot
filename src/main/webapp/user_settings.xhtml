@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <f:metadata>
+    <f:event type="preRenderView" listener="#{userBean.onload()}"></f:event>
+  </f:metadata>
+</h:head>
+
+<h:body>
+  <ui:composition template="common.xhtml">
+    <ui:define name="content">
+      <h:form id="tableform">
+        <p:growl id="msg" showDetail="true" life="2000" />
+        <div class="card">
+          <p:dataTable var="user" value="#{userBean.users}" border="1">
+            <p:column headerText="Id">
+              #{user.id}
+            </p:column>
+            <p:column headerText="Name">
+              #{user.firstName}
+            </p:column>
+            <p:column headerText="Lastname">
+              #{user.lastName}
+            </p:column>
+            <p:column headerText="Address">
+              #{user.adress}
+            </p:column>
+            <p:column headerText="Phone Number">
+              #{user.phoneNo}
+            </p:column>
+            <p:column headerText="Username">
+              #{user.uname}
+            </p:column>
+            <p:column headerText="Password">
+              #{user.password}
+            </p:column>
+            <p:column headerText="Is Admin">
+              #{user.isAdmin()}
+            </p:column>
+            <p:column headerText="Delete">
+              <p:commandButton action="#{userBean.deleteUser(user)}" update="tableform" value="Delete" rendered="#{user.isAdmin() == 'false'}" onclick="return confirm('Are you sure?')" styleClass="ui-button-raised ui-button-danger" />
+            </p:column>
+            <p:column headerText="Edit">
+              <p:commandButton action="#{userBean.editUser(user)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
+            </p:column>
+            <f:facet name="footer">
+              <div style="text-align: center;">
+                <p:commandButton id="createUser" action="#{userBean.createUser()}" value="Create New User" styleClass="ui-button-raised ui-button-success" />
+              </div>
+            </f:facet>
+          </p:dataTable>
+        </div>
+      </h:form>
+    </ui:define>
+  </ui:composition>
+</h:body>
+</html>

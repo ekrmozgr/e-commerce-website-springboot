@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:t="http://java.sun.com/jsf/html"
+>
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{shoppingBean.createCategory()}"></f:event>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form enctype="multipart/form-data" id="createCategory">
+                <p:panel id="CreatePnl" header="Create"
+                         style="width: 350px; margin: 0 auto;">
+                    <h:panelGrid id="createPanel" columns="2" cellpadding="5">
+                        <h:outputText value="Category Name" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="category_name" value="#{shoppingBean._category.category_name}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="category_name"/>
+                    </h:panelGrid>
+
+
+                    <h:panelGrid>
+                        <h:outputText value="Category Image"/>
+                        <p:fileUpload mode="simple" value="#{shoppingBean.uploadedFile}" skinSimple="true" />
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="1" cellpadding="10" width="100%">
+                        <p:commandButton id="createButton" action="#{shoppingBean.save_category()}" type="submit"
+                                         value="Create" update="@form" style="float: right;" >
+                        </p:commandButton>
+
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

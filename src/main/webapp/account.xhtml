@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <p:panel id="UpdatePnl" header="Update"
+                         style="width: 350px; margin: 0 auto;">
+                    <h:panelGrid id="updatePanel" columns="2" cellpadding="5">
+
+                        <h:outputText value="Username" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="uname" value="#{loginBean._usr.uname}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="uname"/>
+
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Password" />
+                        <p:spacer></p:spacer>
+                        <p:password id="password" value="#{loginBean._usr.password}"></p:password>
+                        <p:spacer></p:spacer>
+                        <p:message for="password"/>
+
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Name" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="firstname" value="#{loginBean._usr.firstName}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="firstname"/>
+
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Lastname" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="lastname" value="#{loginBean._usr.lastName}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="lastname"/>
+
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Address" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="adress" value="#{loginBean._usr.adress}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="adress"/>
+
+
+                        <p:spacer></p:spacer>
+                        <h:outputText value="Phone" />
+                        <p:spacer></p:spacer>
+                        <p:inputText id="phoneno" value="#{loginBean._usr.phoneNo}"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="phoneno"/>
+
+
+                    </h:panelGrid>
+                    <h:panelGrid columns="1" cellpadding="10" width="100%">
+                        <p:commandButton id="updateButton" action="#{userBean.updateUser(loginBean._usr)}"
+                                         value="Update" update="@form" style="float: right;">
+                        </p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

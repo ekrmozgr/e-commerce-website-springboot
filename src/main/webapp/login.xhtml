@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:viewAction action="#{loginBean.loginCheckLoggedIn()}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form id="loginForm">
+                <p:panel id="loginPnl" header="Login"
+                         style="width: 350px; margin: 0 auto;">
+                    <h:panelGrid id="loginPanel" columns="2" cellpadding="5">
+                        <h:outputText value="Username" />
+                        <p:inputText id="username" value="#{loginBean.uname}" required="true" requiredMessage="Username Cannot be Null"></p:inputText>
+                        <p:spacer></p:spacer>
+                        <p:message for="username"/>
+                        <h:outputText value="Password" />
+                        <p:password id="password" value="#{loginBean.pwd}" feedback="false" required="true" requiredMessage="Passowrd Cannot be Null"></p:password>
+                        <p:spacer></p:spacer>
+                        <p:message for="password"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="1" cellpadding="10" width="100%">
+                        <p:commandButton id="loginButton" action="#{loginBean.doLogin()}"
+                                         value="Login" update="loginForm" style="float: right;">
+                        </p:commandButton>
+                    </h:panelGrid>
+                    <p:messages></p:messages>
+                </p:panel>
+                <p:blockUI block="loginPnl" trigger="loginButton" style="float:right;">
+                    <p:graphicImage value="resources/images/loader.gif" />
+                </p:blockUI>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

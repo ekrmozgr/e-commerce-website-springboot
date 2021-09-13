@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{shoppingBean.onload()}"></f:event>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="common.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <div class="card" style="margin-top: 50px;">
+                    <p:dataTable var="category" value="#{shoppingBean.categories}" border="1">
+                        <p:column headerText="Categories" style="text-align: center; color: blue">
+                            <p:commandLink action="#{shoppingBean.getProductsByCategory(category)}">
+                                <h:graphicImage value="data:image/jpg;charset=UTF-8;base64,#{category.image}" rendered="#{category.image != null}" style="max-width: 100px; max-height: 100px;"></h:graphicImage>
+                                <h:graphicImage value="data:image/jpg;charset=UTF-8;base64,#{shoppingBean.defCategoryImage()}" rendered="#{category.image == null}"  style="max-width: 100px; max-height: 100px;"></h:graphicImage>
+                            </p:commandLink>
+                            <h3><p:commandLink action="#{shoppingBean.getProductsByCategory(category)}" value="#{category.category_name}"/></h3>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
