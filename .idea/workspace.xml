@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b0dfc86-f9e4-45aa-8780-b4f0d3ff9b14" name="Changes" comment="Update" />
+    <list default="true" id="6b0dfc86-f9e4-45aa-8780-b4f0d3ff9b14" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/entities/entities.dat_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/storage_v2/_src_/schema/ADMIN.Lwu0Aw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/storage_v2/_src_/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5ac223e-f38a-444b-8602-dbb4ee26cc46/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/category_image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/product_image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springproject/ManagedBeans/ShoppingBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springproject/ManagedBeans/ShoppingBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/basket.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/basket.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/edit_user.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/edit_user.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/shopping_settings.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shopping_settings.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_settings.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_settings.xhtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +73,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1wxsdjScMDtVgoEH5ggd6n304L5" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -63,7 +93,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.typerenderers" />
@@ -159,6 +189,18 @@
       <workItem from="1631450180822" duration="11887000" />
       <workItem from="1631490951199" duration="10802000" />
       <workItem from="1631521289212" duration="7738000" />
+      <workItem from="1631530007819" duration="2281000" />
+      <workItem from="1631537190115" duration="7298000" />
+      <workItem from="1633177822210" duration="6633000" />
+      <workItem from="1633194890994" duration="2800000" />
+      <workItem from="1633208178069" duration="1677000" />
+      <workItem from="1633268696783" duration="10216000" />
+      <workItem from="1633304390853" duration="1681000" />
+      <workItem from="1633354949468" duration="10113000" />
+      <workItem from="1633386310978" duration="7568000" />
+      <workItem from="1633443300236" duration="1008000" />
+      <workItem from="1633448043263" duration="906000" />
+      <workItem from="1639228537916" duration="230000" />
     </task>
     <servers />
   </component>

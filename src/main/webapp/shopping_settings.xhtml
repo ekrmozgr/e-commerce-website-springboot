@@ -34,9 +34,6 @@
                         <p:column headerText="Edit">
                             <p:commandButton  action="#{shoppingBean.editCategory(category)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
                         </p:column>
-                        <p:column headerText="Reset Image">
-                            <p:commandButton action="#{shoppingBean.resetCategoryImage(category)}" update="@form" value="Set Default Image" styleClass="ui-button-raised ui-button-secondary" />
-                        </p:column>
                         <p:column headerText="Make a Discount">
                             <p:inputText id="discount" value="#{category.discount_percent}"></p:inputText>
                             <br></br>
@@ -91,9 +88,6 @@
                             </p:column>
                             <p:column headerText="Edit">
                                 <p:commandButton action="#{shoppingBean.editProduct(product)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
-                            </p:column>
-                            <p:column headerText="Reset Image">
-                                <p:commandButton action="#{shoppingBean.resetProductImage(product)}" update="@form" value="Set Default Image" styleClass="ui-button-raised ui-button-secondary" />
                             </p:column>
                             <p:column headerText="Make a Discount">
                                 <p:inputText id="p_discount" value="#{product.discount_percent}"></p:inputText>

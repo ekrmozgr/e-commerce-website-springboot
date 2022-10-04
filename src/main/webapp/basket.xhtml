@@ -21,7 +21,8 @@
         <div class="card">
           <p:dataTable var="product" value="#{shoppingBean.products}" border="1" style="margin-top: 50px">
             <p:column headerText="Image">
-              #{product.image}
+              <h:graphicImage value="data:image/jpg;charset=UTF-8;base64,#{product.image}" rendered="#{product.image != null}" style="max-width: 100px; max-height: 100px;"></h:graphicImage>
+              <h:graphicImage value="data:image/jpg;charset=UTF-8;base64,#{shoppingBean.defProductImage()}" rendered="#{product.image == null}"  style="max-width: 100px; max-height: 100px;"></h:graphicImage>
             </p:column>
             <p:column headerText="Name">
               #{product.product_name}

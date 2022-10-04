@@ -48,7 +48,7 @@
               <p:commandButton action="#{userBean.deleteUser(user)}" update="tableform" value="Delete" rendered="#{user.isAdmin() == 'false'}" onclick="return confirm('Are you sure?')" styleClass="ui-button-raised ui-button-danger" />
             </p:column>
             <p:column headerText="Edit">
-              <p:commandButton action="#{userBean.editUser(user)}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
+              <p:commandButton action="#{userBean.editUser(user)}" rendered="#{user.isAdmin() == 'false'}" value="Edit" styleClass="ui-button-raised ui-button-warning" />
             </p:column>
             <f:facet name="footer">
               <div style="text-align: center;">

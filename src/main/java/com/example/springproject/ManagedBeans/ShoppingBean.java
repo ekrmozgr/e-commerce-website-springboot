@@ -183,14 +183,18 @@ public class ShoppingBean {
     }
 
 
-    public void addToBasket(Product product)
+    public String addToBasket(Product product)
     {
+        HttpSession session = SessionUtils.getSession();
+        if(session.getAttribute("user_id") == null)
+            return "/login.xhtml?faces-redirect=true";
+
+        int id = (Integer)session.getAttribute("user_id");
+
             if(product.getBasket_quantity() < 1) {
                 product.setBasket_quantity(0);
-                return;
+                return null;
             }
-            HttpSession session = SessionUtils.getSession();
-            int id = (Integer)session.getAttribute("user_id");
             _basket = shoppingService.getBasketByUserId(id);
             for (Product basket_p: _basket.getProducts()) {
                 if(basket_p.getProduct_id() == product.getProduct_id())
@@ -205,7 +209,7 @@ public class ShoppingBean {
                                     "Success !",
                                     "Product Added to the Basket"));
                     product.setBasket_quantity(0);
-                    return;
+                    return null;
                 }
             }
             _basket.getProducts().add(product);
@@ -216,6 +220,7 @@ public class ShoppingBean {
                         "Success !",
                         "Product Added to The Basket"));
         product.setBasket_quantity(0);
+        return null;
     }
 
     public void basketProducts()

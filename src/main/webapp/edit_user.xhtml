@@ -62,7 +62,7 @@
 
                     </h:panelGrid>
                     <h:panelGrid columns="1" cellpadding="10" width="100%">
-                        <p:commandButton id="updateButton" action="#{userBean.updateUser()}"
+                        <p:commandButton id="updateButton" action="#{userBean.updateUser(userBean._usr)}"
                                          value="Update" update="@form" style="float: right;">
                         </p:commandButton>
                     </h:panelGrid>
