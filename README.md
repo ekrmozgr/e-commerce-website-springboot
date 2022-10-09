@@ -6,8 +6,6 @@
       by code-first approach
     - Input validation was performed
     - Authentication and Authorization operations were done
-
-  ## Example Photos       
         
   
   ### Categories
