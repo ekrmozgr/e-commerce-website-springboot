@@ -79,3 +79,13 @@
 <p align="center">
 <img src="https://user-images.githubusercontent.com/72643454/194771514-ffa88446-f953-4f04-a300-ec33d72cf23d.png">
 </p>
+
+</br>
+
+  ### Authorization
+  --------------------------------
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/72643454/194772276-0051f447-6e77-4cb0-9991-6aefd104e5c6.png">
+</p>
+
